@@ -14,7 +14,7 @@ jobs:
           git clone https://github.com/yeoman/generator.git ../generator
           mkdir -p api/generator
           cd api/generator
-          jsdoc2md ../../../generator/lib/*.js
+          jsdoc2md ../../../generator/lib/*.js > api.md
           git add .
           git config --local user.email "marceloshima@gmail.com"
           git config --local user.name "Marcelo Shima"

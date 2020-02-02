@@ -17,7 +17,7 @@ jobs:
           path: generator
       - uses: actions/checkout@v2
         with:
-          repository: yeoman/test
+          repository: yeoman/yeoman-test
           path: test
       - uses: actions/checkout@v2
         with:

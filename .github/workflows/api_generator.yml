@@ -6,12 +6,18 @@ jobs:
   createPullRequest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - run: npm install -g jsdoc-to-markdown
+      - uses: actions/checkout@v2
+        with:
+          path: page
+      - uses: actions/checkout@v2
+        with:
+          repository: yeoman/generator
+          path: generator
       - name: Update jsdoc
         run: |
-          git clone https://github.com/yeoman/generator.git ../generator
+          cd page
           mkdir -p app/api/generator
           cd app/api/generator
           jsdoc2md ../../../../generator/lib/*.js > api.md

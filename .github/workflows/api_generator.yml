@@ -15,6 +15,10 @@ jobs:
           mkdir -p api/generator
           cd api/generator
           jsdoc2md ../../../generator/lib/*.js
+          git add .
+          git config --local user.email "marceloshima@gmail.com"
+          git config --local user.name "Marcelo Shima"
+          git commit -a -m "update"
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v2

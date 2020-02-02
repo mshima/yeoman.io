@@ -15,13 +15,26 @@ jobs:
         with:
           repository: yeoman/generator
           path: generator
+      - uses: actions/checkout@v2
+        with:
+          repository: yeoman/test
+          path: test
+      - uses: actions/checkout@v2
+        with:
+          repository: yeoman/environment
+          path: environment
       - name: Update jsdoc
         run: |
           cd page
           mkdir -p app/api/generator
+          mkdir -p app/api/environment
+          mkdir -p app/api/test
           jsdoc2md ../generator/lib/*.js > app/api/generator/api.md
           jsdoc2md ../generator/lib/actions/*.js > app/api/generator/actions.md
           jsdoc2md ../generator/lib/util/*.js > app/api/generator/util.md
+          jsdoc2md ../test/lib/*.js > app/api/test/api.md
+          jsdoc2md ../environment/lib/*.js > app/api/environment/api.md
+          jsdoc2md ../environment/lib/util/*.js > app/api/environment/util.md
           git add .
           git config --local user.email "mshima@users.noreply.github.com"
           git config --local user.name "Marcelo Shima"

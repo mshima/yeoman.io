@@ -40,6 +40,7 @@ jobs:
             Update generator api with last master version
           labels: automated pr
           branch: api-generator
+          path: page
       - name: Check outputs
         run: |
           echo "Pull Request Number - ${{ env.PULL_REQUEST_NUMBER }}"

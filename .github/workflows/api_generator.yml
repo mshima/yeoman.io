@@ -19,7 +19,7 @@ jobs:
           jsdoc2md ../../../generator/lib/util/*.js > util.md
           git add .
           git config --local user.email "mshima@users.noreply.github.com"
-          git config --local user.name "Yeoman Team"
+          git config --local user.name "Marcelo Shima"
           git commit -a -m "Update generator api"
       - name: Create Pull Request
         id: cpr
@@ -31,7 +31,7 @@ jobs:
           author: Marcelo Shima <mshima@users.noreply.github.com>
           title: 'Update generator api'
           body: |
-            Update generator api
+            Update generator api with last master version
           labels: automated pr
           branch: api-generator
       - name: Check outputs
